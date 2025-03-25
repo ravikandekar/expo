@@ -1,53 +1,98 @@
-# Welcome to your Expo app 👋
+# React Native Task Management App (Expo)
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## Overview
+This is a full-featured React Native app built using Expo. It includes authentication and task management functionalities with JWT-based authentication and JSON as the data source. The app ensures a modern and attractive UI with proper state management using React Context API.
 
-## Get started
+## Features
 
-1. Install dependencies
+### Authentication
+- **Signup Screen**: Users can register with their name, email, and password.
+- **Login Screen**: Users can log in with their email and password.
+- **JWT Token Authentication**: Tokens are stored using `AsyncStorage` for session management.
+- **Logout**: Clears stored token and navigates back to the login screen.
 
-   ```bash
+### Task Management
+- **Home Screen**: Displays a list of tasks from a JSON file (simulating an API response). Includes pull-to-refresh.
+- **Add Task Screen**: Users can create a new task with a title and description.
+- **Task Details Screen**: Displays task details and allows users to edit or delete tasks.
+
+## Tech Stack & Tools
+- **State Management**: React Context API (wrapped properly for API handling)
+- **Navigation**: React Navigation (Stack Navigator)
+- **Storage**: AsyncStorage (for JWT tokens)
+- **UI Library**: NativeBase (for an attractive UI)
+
+## Project Structure
+```
+.
+├── assets/               # Static assets
+├── src/
+│   ├── components/       # Reusable UI components
+│   ├── context/          # API Context for state management
+│   ├── screens/          # All screens (Login, Signup, Home, Add Task, Task Details)
+│   ├── utils/            # Helper functions (JWT handling, AsyncStorage operations)
+│   ├── data/             # Sample JSON files for authentication and tasks
+│   ├── navigation/       # Stack navigation setup
+│   ├── App.js            # Main app entry point
+├── package.json          # Dependencies and scripts
+├── README.md             # Project documentation
+```
+
+## Installation & Setup
+
+1. **Clone the Repository:**
+   ```sh
+   git clone https://github.com/your-repo/task-manager-app.git
+   cd task-manager-app
+   ```
+
+2. **Install Dependencies:**
+   ```sh
    npm install
    ```
 
-2. Start the app
-
-   ```bash
-    npx expo start
+3. **Start the Expo Development Server:**
+   ```sh
+   npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+## Usage
+1. **Signup** with a name, email, and password.
+2. **Login** using registered credentials.
+3. **View tasks** on the home screen.
+4. **Add, edit, or delete** tasks.
+5. **Logout** to clear the session.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+## Sample JSON Data
+### Users (`src/api/mockdata.json`)
+```json
+[
+  {
+    id: 1,
+    name: 'Demo User',
+    email: 'demo@example.com',
+    password: 'password123' // In a real app, this would be hashed
+  }
+]
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### Tasks (`src/api/mockdata.json`)
+```json
+[
+  {
+    "id": 1,
+    "title": "Complete React Native Project",
+    "description": "Build a task management app with authentication."
+  }
+]
+```
 
-## Learn more
+## Contributing
+Feel free to submit issues or pull requests for improvements.
 
-To learn more about developing your project with Expo, look at the following resources:
+## License
+This project is open-source and available under the MIT License.
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+---
+Enjoy building with React Native! 🚀
 
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
-"# ExpoTaskManager" 
-"# expo" 
-"# expo" 
